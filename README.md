@@ -55,18 +55,30 @@ Finally, copy the following files from the nodejs directory in this repository i
 
 
 ## Golang
-1. `go fmt` your code.
-2. Comment your code according to [godoc standards](https://blog.golang.org/godoc-documenting-go-code).
-3. Keep your dependency tree up-to-date. `dep ensure -update` will do this for you.
 
+In general, you should use the built-in command `go fmt` to lint code from the command line. Many modern code editors, such as [VS Code](https://code.visualstudio.com/) and [Atom](https://atom.io/), have Go plugins that will do this for you automatically on save. These editors also allow type-ahead support, pre-compilation checks, and some [godoc standards](https://blog.golang.org/godoc-documenting-go-code) checks. **You should use these editors, as they'll make life easy.**
+
+Secondly, run `dep ensure -update` to keep your dependency tree up-to-date and vendorized within the repo.
 
 ## Python
 
 ## Ruby
 
+Use [rubocop](http://batsov.com/rubocop/) for coding style and [bundler](https://bundler.io/) for dependency management.
 
 # Tests
 
-Write tests. Do it.
+Unit tests check expected behavior at the function or interface level. Many libraries exist to make unit testing easier:
+
+- [MochaJS](https://mochajs.org/) (node.js)
+- [RSpec](http://rspec.info/) (Ruby)
+- [unittest](https://docs.python.org/3/library/unittest.html) (Python)
+- [testify](https://github.com/stretchr/testify#testify---thou-shalt-write-tests) (Go)
+
+Integration tests check expected behavior at the API level. Many of the same libraries above have extensions or techniques for integration testing. Some additional libraries to be aware of are:
+
+- [ChaiJS](https://www.chaijs.com/) (node.js)
+- [Capybara](http://teamcapybara.github.io/capybara/) (Ruby)
+
 
 # CD/CI
