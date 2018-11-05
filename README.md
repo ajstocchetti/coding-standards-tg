@@ -44,7 +44,10 @@ Then copy the following into your package.json file. This sets up a pre-commit h
 },
 "lint-staged": {
   "*.(js|jsx)": ["npm run lint:write", "git add"]
-},```
+}
+
+```
+
 Finally, copy the following files from the nodejs directory in this repository into the root directory of your new project:
 - .eslintignore
 - .eslintrc.js
