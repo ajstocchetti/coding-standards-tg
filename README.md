@@ -6,13 +6,33 @@ TODO: reconcile/combine with https://turinggroup.atlassian.net/wiki/spaces/TGKB/
 
 # Version Control
 
-Make Pull Requests. Before merging any PRs, a dev lead is responsible for ensuring:
+Git is to be used for version control.
+
+
+## Branching and Commits
+Git branching should follow the following model: https://nvie.com/posts/a-successful-git-branching-model. Specifically,
+* All code is developed on a feature branch. Feature branches are merged into the dev (or development) branch after going through code review.
+* The master branch (or production branch) is not to be updated directly. Code may only be merged into this branch, after being tested on the development branch (or another pre-production environment branch).
+
+Commit messages are to contain meaningful language about the changes made in the commit. [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), by Chris Beams, covers the content and style of how a commit message should be structured.
+
+
+## Code Review
+Code review is handles through Pull Requests. Before merging any pull requests, a development lead is responsible for ensuring:
   * PR has been code reviewed by at least one other developer (not the author of the PR)
   * All required corrections have been implemented
   * PR & related migrations do **NOT** contain development, test and/or custom application accounts, user ID's and/or passwords
   * Relevant test suites are passing
   * PR has been assessed against common coding vulnerabilities as outlined in the [OWASP Top 10](https://www.owasp.org/index.php/Top_10_2013-Top_10).
+  * The code adheares to company coding and linting standards (see [Coding Style](#coding-style-guide))
 
+
+## Git server
+Sadly, choosing the right git server can be a lot of work. AWS Code Commit integrates easily with AWS Code Pipeline, but the interfaces for managing code (Pull Requests, code review) are lacking. BitBucket integrates well with Jira tickets, but not with AWS. There is a company GitLab account, which allows us to control the server (and content thereof), but does not integrate easily with other services. There is no correct service to use - the following should be considered guidelines to assist in this choice.
+
+For internal projects, either the company GitLab (https://git.turinggroup.com) or GitHub (https://github.com/turinggroup/) should be used. There is also a Server Central BitBucket account that will likely be used/consolidated with the two Turing Group git servers in the future.
+
+For client projects, the client's git server (GitLab, private GitHub account) should be used if available. A Code Commit repository within the client's AWS environment may ale be used. If none of these are available, the company GitHub (https://github.com/turinggroup/) may be used.
 
 
 # Coding Style Guide
