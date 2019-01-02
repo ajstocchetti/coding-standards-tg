@@ -14,7 +14,7 @@ Git branching should follow the following model: https://nvie.com/posts/a-succes
 * All code is developed on a feature branch. Feature branches are merged into the dev (or development) branch after going through code review.
 * The master branch (or production branch) is not to be updated directly. Code may only be merged into this branch, after being tested on the development branch (or another pre-production environment branch).
 
-Commit messages are to contain meaningful language about the changes made in the commit. [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), by Chris Beams, covers the content and style of how a commit message should be structured.
+Commit messages are to contain meaningful language about the changes made in the commit. [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), by Chris Beams, covers the content and style of how a commit message should be structured. Commits with incomplete/broken code should be prefaced with `WIP` to signal that the codebase is in an unstable state. References to Jira tickets are also encouraged.
 
 
 ## Code Review
